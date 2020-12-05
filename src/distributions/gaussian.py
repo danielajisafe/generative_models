@@ -15,7 +15,7 @@ def log_gaussian(x, mean=0, logvar=0.):
     if type(logvar) == 'float':
         logvar = x.new(1).fill_(logvar)
 
-    print('x , mean', x, mean)
+    print('x, mean', x.shape, mean.shape)
     mean = mean[..., np.newaxis] #add extra dims to the mean 
     a = (x - mean) ** 2
     log_p = -0.5 * (logvar + a / logvar.exp())
